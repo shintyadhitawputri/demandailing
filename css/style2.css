@@ -1,0 +1,333 @@
+* {
+  /*all selector*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none; /*agar link tidah disertakan garis bawah*/
+}
+
+body {
+  font-family: "Poppins";
+  color: black;
+  background-image: url(https://lh3.googleusercontent.com/p/AF1QipPF7c1wg1KpFw401U2MzF4-ITBcjUhIAh_4NREy=s1360-w1360-h1020);
+  background-color: rgba(248, 233, 233, 0.5); /* Warna transparan */
+  background-blend-mode: overlay; /* Untuk menggabungkan warna transparan dengan gambar */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Navbar */
+.navbar {
+  display: flex; /*agar sejajar*/
+  justify-content: space-between; /*agar rata kiri-kanan*/
+  align-items: center;
+  padding: 1.4rem 7%; /*1.4 untuk atas bawah, 7% kiri kanan*/
+  background-color: white;
+  border-bottom: 2px solid rgb(245, 173, 165);
+  /*agar navbar stay di atas saat di scroll*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: black;
+}
+
+.navbar .navbar-logo span {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: red;
+}
+
+.navbar .navbar-cen a {
+  color: grey;
+  display: inline-block;
+  margin: 0 1.2rem;
+  font-size: 0.9rem;
+}
+
+.navbar .navbar-cen a:hover,
+.menu .opsimenu a:hover,
+#logout :hover {
+  color: red;
+}
+
+.navbar .navbar-cen a::after {
+  content: "";
+  display: block;
+  padding: 0.1rem;
+  border-bottom: 0.1rem solid red;
+  transform: scaleX(0); /*agar tidak terlihat dulu*/
+}
+
+.navbar .navbar-cen a:hover::after {
+  transform: scaleX(0.8);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-right a {
+  color: rgb(0, 0, 0);
+  margin: 0 0.7rem;
+}
+
+#hamburger-menu {
+  display: none; /*agar tidak terlihat dulu*/
+}
+
+/* Media*/
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 100%;
+  }
+}
+/* Tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 75%;
+  }
+
+  #hamburger-menu {
+    display: inline-block; /*hamburger menu muncul kembali*/
+  }
+
+  .bgback .navbar .navbar-cen {
+    position: absolute;
+    top: 100%;
+    right: -100%; /*agar sembunyi diluar kanan*/
+    background-color: rgb(248, 233, 233);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s; /*sidebar trantition*/
+  }
+
+  .bgback .navbar .navbar-cen.active {
+    right: 0; /*agar saat haburger diklik, dia muncul dikanan*/
+  }
+
+  .bgback .navbar .navbar-cen a {
+    color: grey;
+    display: block; /*agar kebawah*/
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .bgback .navbar .navbar-cen a::after {
+    transform-origin: 0 0; /*agar garis bawah kekiri (sumbu x=0, y=0)*/
+  }
+
+  .bgback .navbar .navbar-cen a:hover::after {
+    transform: scaleX(0.3);
+  }
+}
+
+/* Handphone */
+@media (max-width: 450px) {
+  html {
+    font-size: 63%;
+  }
+}
+
+.bgback .section {
+  position: relative;
+  height: 100vh;
+}
+
+.bgback .section .section-center {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+#booking {
+  font-family: "Raleway", sans-serif;
+  margin-top: 50px;
+}
+
+.bgback .booking-form {
+  position: relative;
+  top: 70%;
+  max-width: 642px;
+  width: 100%;
+  margin: auto;
+  padding: 40px;
+  overflow: hidden;
+  background-image: url("../img/background.jpg");
+  background-color: rgba(248, 233, 233, 1); /* Warna transparan */
+  background-blend-mode: overlay; /* Untuk menggabungkan warna transparan dengan gambar */
+  background-size: cover;
+  border-radius: 5px;
+  z-index: 20;
+}
+
+.bgback .booking-form::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: #743232b4;
+  z-index: -1;
+}
+
+.bgback .booking-form .form-header {
+  text-align: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.bgback .booking-form .form-header h1 {
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 42px;
+  margin: 0px;
+  color: #fff;
+}
+
+.bgback .booking-form .form-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.bgback .booking-form .form-control {
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 60px;
+  width: 560px;
+  padding: 0px 25px;
+  border: none;
+  border-radius: 40px;
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 0px 2px transparent;
+  box-shadow: 0px 0px 0px 2px transparent;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.bgback .booking-form .form-control::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.bgback .booking-form .form-control:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.bgback .booking-form .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.bgback .booking-form .form-control:focus {
+  -webkit-box-shadow: 0px 0px 0px 2px #3c486b;
+  box-shadow: 0px 0px 0px 2px #3c486b;
+}
+
+.bgback .booking-form input[type="date"].form-control {
+  padding-top: 16px;
+}
+
+.bgback .booking-form input[type="date"].form-control:invalid {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.bgback .booking-form input[type="date"].form-control + .form-label {
+  opacity: 1;
+  top: 10px;
+}
+
+.bgback .booking-form select.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.bgback .booking-form select.form-control:invalid {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.bgback .booking-form select.form-control + .select-arrow {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 32px;
+  line-height: 32px;
+  height: 32px;
+  text-align: center;
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+}
+
+.bgback .booking-form select.form-control + .select-arrow:after {
+  content: "\279C";
+  display: block;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.bgback .booking-form select.form-control option {
+  color: #ff6969;
+}
+
+.bgback .booking-form .form-label {
+  position: absolute;
+  top: -10px;
+  left: 25px;
+  opacity: 0;
+  color: #3c486b;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  height: 15px;
+  line-height: 15px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.bgback .booking-form .form-group.input-not-empty .form-control {
+  padding-top: 16px;
+}
+
+.bgback .booking-form .form-group.input-not-empty .form-label {
+  opacity: 1;
+  top: 10px;
+}
+
+.bgback .booking-form .submit-btn {
+  color: #fff;
+  background-color: #3c486b;
+  font-weight: 700;
+  height: 60px;
+  padding: 10px 30px;
+  width: 100%;
+  border-radius: 40px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1.3px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.bgback .booking-form .submit-btn:hover,
+.bgback .booking-form .submit-btn:focus {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
