@@ -19,12 +19,11 @@ The system will provide the following key features:
 
 5. Reservation Booking:
  - Users can select their preferred date, time, and the number of guests for their reservation.
- - The system will provide real-time availability updates and confirm the reservation if the requested slot is available.
+ - The system will provide availability updates and confirm the reservation if the requested slot is available.
  - Users will receive a confirmation chat with reservation details.
 
 6. Reservation Status Updates:
- - Users can log in to their accounts to check the status of their reservations.
- - The system will provide real-time updates, including any changes or cancellations.
+ - Users can check the status of their reservations.
 
 ## Languages: 
 PHP · JavaScript · Cascading Style Sheets (CSS) · HTML
